@@ -8,19 +8,31 @@
 	<h1>Name</h1>
 
 	<form>
-		<input id="name" type="text" name="" value="" onblur="f1()" /><br> <p id="msg"></p>
-		<input type="button" name="btn" value="Submit" onclick="f1()">
+		<input name="name" type="text" name=" "id="1" onkeyup="validateName()"/><br> <p name="name"></p>
+		<div id="ename"> </div>
+		<input type="button" name="Submit" value="Submit" onclick="validateName()">
 	</form>
 	<script>
-		    function f1(){
-			var name = document.getElementById('name').value;
-			if(name == ""){
-				document.getElementById('msg').innerHTML = "null submission";
-			}else{
-				document.getElementById('msg').innerHTML = "Ok";
-			}
-			document.getElementById('msg').innerHTML = name;
+		   function validateName() {
+	var ername = document.getElementById('ename');
+	var name = document.getElementById('1').value;
+	
+	if (name == "") 
+	{
+		ername.innerHTML = "Empty!";
+	}
+	else {
+		if(letterValid(name))
+		{
+			ername.innerHTML = "";
 		}
+		else
+		{
+			ername.innerHTML = "Name can not Valid.";
+		}
+	}
+	
+}
 	</script>
 
 </body>
